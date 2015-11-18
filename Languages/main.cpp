@@ -15,9 +15,10 @@
 int main(int argc, const char * argv[]) {
     std::vector<std::string> files = {
         "files/intro.dank" ,
-        "files/brainfuck.dank"
+        "files/brainfuck.dank",
+        "files/python.dank"
     };
-    
+
     for(auto &i: files) {
         File file(i);
         file.printFile();
