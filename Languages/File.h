@@ -19,39 +19,11 @@
 class File {
     
 public:
-    File(std::string path) {
-        std::ifstream file;
-        file.open(path.c_str());
-        
-        if (!file) {
-            std::cout << "Could not open file...\n";
-            return;
-        }
-        
-        std::string line;
-        if (file.is_open())
-            while (std::getline(file, line))
-                lines.push_back(line);
-        
-        if(containsWord("Java"))
-            std::cout << "Thobias sluta skriva om Java.\n";
-    }
+    File(std::string path);
     
-    void printFile() {
-        for(auto &i: lines) {
-            std::cout << i << "\n";
-        }
-    }
+    void printFile();
     
-    bool containsWord(std::string word) {
-        
-        for(auto &i: lines) {
-            if(i.find(word) != std::string::npos)
-                return true;
-        }
-        
-        return false;
-    }
+    bool containsWord(std::string word);
     
     std::vector<std::string> lines;
     
