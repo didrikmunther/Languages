@@ -11,6 +11,11 @@
 
 int main(int argc, const char * argv[]) {
     ReadFile f;
+<<<<<<< HEAD
     f.initFile("files/order.txt");
+=======
+    f.readFile("Files/test.txt");
+
+>>>>>>> Malaxiz/master
     return 0;
 }
