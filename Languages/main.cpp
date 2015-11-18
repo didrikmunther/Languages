@@ -7,11 +7,21 @@
 //
 
 #include <iostream>
+#include <map>
+
 #include "File.h"
 
-int main(int argc, const char * argv[]) {
-    File file("Files/test.txt");
-    file.printFile();
 
+int main(int argc, const char * argv[]) {
+    std::vector<std::string> files = {
+        "files/intro.dank" ,
+        "files/brainfuck.dank"
+    };
+    
+    for(auto &i: files) {
+        File file(i);
+        file.printFile();
+    }
+    
     return 0;
 }
