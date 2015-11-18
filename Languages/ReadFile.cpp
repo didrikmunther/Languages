@@ -22,5 +22,11 @@ void ReadFile::readFile(std::string fileName) {
             std::cout << line << "\n";
         }
     }
-    
+    file.close();
+
+}
+
+
+void ReadFile::initFile(std::string fileName) {
+
 }

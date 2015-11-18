@@ -11,6 +11,6 @@
 
 int main(int argc, const char * argv[]) {
     ReadFile f;
-    f.readFile("files/test.txt");
+    f.initFile("files/order.txt");
     return 0;
 }

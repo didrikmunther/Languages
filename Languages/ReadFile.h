@@ -13,15 +13,19 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
+
 
 class ReadFile {
     
 public:
     ReadFile();
     void readFile(std::string fileName);
+    void initFile(std::string fileName);
     
     std::ifstream file;
     std::string line;
+    std::vector<std::string> files;
 };
 
 #endif /* defined(__Languages_lucas__ReadFile__) */
