@@ -10,7 +10,6 @@
 
 
 File::File(std::string path) {
-    std::ifstream file;
     file.open(path.c_str());
     
     if (!file) {
@@ -23,10 +22,12 @@ File::File(std::string path) {
         while (std::getline(file, line))
             lines.push_back(line);
     
-    file.close();
-    
     if(containsWord("Java"))
         std::cout << "(Thobias sluta skriva om Java pls)\n";
+}
+
+File::~File() {
+    file.close();
 }
 
 void File::printFile() {
