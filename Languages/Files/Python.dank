@@ -1,0 +1,59 @@
+Python
+- - - - - - - -
+Python skapades år 1991 av Guido van Rossum.
+Python är ett skripting språk, vilket betyder att man behöver inte kompilera koden man skriver utan körs direkt.
+Språket är speciellt designat för att det ska vara lätt att använda och lätt att läsa. Man kan använda Python till mycket, det har väldigt många biblotek vilket gör språket användarvänligt.
+Python är open-source vilket betyder att vem som helst kan se källan och se hur det är uppbyggt.
+
+Språket har en fin filosofi:
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let's do more of those!
+
+Och allt detta är sant för språket.
+
+Här har vi lite exempel:
+
+# detta är en kommentar
+
+"""
+Här brukar man lägga information om sitt biblotek
+Då om exempelvis hur biblotekets funktioner är definerade och vilka parametrar som behövs.
+"""
+
+###Typer
+
+a = 5                   # Detta är en variabel med typen integer (heltal)
+a = 5.5                 # Detta är en variabel med typen float (decimaltal)
+a = True                # Sant eller falsk variabel
+a = []                  # En lista
+a = {"hej":1}           # En dictonary eller som man kallar det i C++, en map.
+
+###funktioner
+
+def test():             #Detta är en funktion
+print("okej")       #Här skriver den till konsolen
+#det är viktigt med en tab innan man fortsätter med innehållet av funktionen
+
+#om man ska ropa på funktionen så gör man:
+test()
+
+
+

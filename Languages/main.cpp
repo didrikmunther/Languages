@@ -41,6 +41,7 @@ int main(int argc, const char * argv[]) {
     for(auto& i: elements) {
         std::cout << ">> " << i.first << "\n";
         File file(i.second);
+
         file.printFile();
         std::cout << "<<\n";
     }
