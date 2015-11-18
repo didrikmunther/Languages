@@ -1,15 +1,17 @@
 //
 //  main.cpp
-//  Languages
+//  Languages-lucas
 //
-//  Created by Didrik Munther on 18/11/15.
-//  Copyright © 2015 Didrik Munther. All rights reserved.
+//  Created by Lucas Karlsson on 18/11/15.
+//  Copyright (c) 2015 Lucas Karlsson. All rights reserved.
 //
 
 #include <iostream>
+#include "ReadFile.h"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    ReadFile f;
+    f.readFile("Files/test.txt");
+
     return 0;
 }
