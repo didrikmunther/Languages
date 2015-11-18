@@ -18,7 +18,7 @@ class ReadFile {
     
 public:
     ReadFile();
-    void readFile(std::string fileName);
+    void printFile(std::string fileName);
     
     std::ifstream file;
     std::string line;

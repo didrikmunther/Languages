@@ -7,11 +7,11 @@
 //
 
 #include <iostream>
-#include "ReadFile.h"
+#include "File.h"
 
 int main(int argc, const char * argv[]) {
-    ReadFile f;
-    f.readFile("Files/test.txt");
+    File file("Files/test.txt");
+    file.printFile();
 
     return 0;
 }

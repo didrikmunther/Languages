@@ -10,17 +10,7 @@
 
 ReadFile::ReadFile() { }
 
-void ReadFile::readFile(std::string fileName) {
-    file.open(fileName.c_str());
+void ReadFile::printFile(std::string fileName) {
     
-    if (!file) {
-        std::cout << "Could not open file...\n";
-        exit(1);
-    }
-    if (file.is_open()) {
-        while (std::getline(file,line)) {
-            std::cout << line << "\n";
-        }
-    }
     
 }
