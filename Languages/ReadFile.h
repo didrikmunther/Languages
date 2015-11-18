@@ -20,8 +20,12 @@ class ReadFile {
     
 public:
     ReadFile();
+<<<<<<< HEAD
     void readFile(std::string fileName);
     void initFile(std::string fileName);
+=======
+    void printFile(std::string fileName);
+>>>>>>> Malaxiz/master
     
     std::ifstream file;
     std::string line;

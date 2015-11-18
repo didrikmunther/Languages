@@ -7,14 +7,19 @@
 //
 
 #include <iostream>
-#include "ReadFile.h"
+#include "File.h"
 
 int main(int argc, const char * argv[]) {
+<<<<<<< HEAD
     ReadFile f;
 <<<<<<< HEAD
     f.initFile("files/order.txt");
 =======
     f.readFile("Files/test.txt");
+=======
+    File file("Files/test.txt");
+    file.printFile();
+>>>>>>> Malaxiz/master
 
 >>>>>>> Malaxiz/master
     return 0;

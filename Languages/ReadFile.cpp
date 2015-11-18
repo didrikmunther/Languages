@@ -10,9 +10,9 @@
 
 ReadFile::ReadFile() { }
 
-void ReadFile::readFile(std::string fileName) {
-    file.open(fileName.c_str());
+void ReadFile::printFile(std::string fileName) {
     
+<<<<<<< HEAD
     if (!file) {
         std::cout << "Could not open file...\n";
         exit(1);
@@ -29,4 +29,7 @@ void ReadFile::readFile(std::string fileName) {
 
 void ReadFile::initFile(std::string fileName) {
 
+=======
+    
+>>>>>>> Malaxiz/master
 }
