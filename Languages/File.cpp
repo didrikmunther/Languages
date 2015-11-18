@@ -23,8 +23,10 @@ File::File(std::string path) {
         while (std::getline(file, line))
             lines.push_back(line);
     
+    file.close();
+    
     if(containsWord("Java"))
-        std::cout << "Thobias sluta skriva om Java.\n";
+        std::cout << "(Thobias sluta skriva om Java pls)\n";
 }
 
 void File::printFile() {
@@ -34,7 +36,6 @@ void File::printFile() {
 }
 
 bool File::containsWord(std::string word) {
-    
     for(auto &i: lines) {
         if(i.find(word) != std::string::npos)
             return true;

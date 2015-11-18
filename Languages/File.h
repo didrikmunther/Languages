@@ -22,7 +22,6 @@ public:
     File(std::string path);
     
     void printFile();
-    
     bool containsWord(std::string word);
     
     std::vector<std::string> lines;
