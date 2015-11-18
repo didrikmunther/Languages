@@ -12,24 +12,5 @@ ReadFile::ReadFile() { }
 
 void ReadFile::printFile(std::string fileName) {
     
-<<<<<<< HEAD
-    if (!file) {
-        std::cout << "Could not open file...\n";
-        exit(1);
-    }
-    if (file.is_open()) {
-        while (std::getline(file,line)) {
-            std::cout << line << "\n";
-        }
-    }
-    file.close();
-
-}
-
-
-void ReadFile::initFile(std::string fileName) {
-
-=======
     
->>>>>>> Malaxiz/master
 }
