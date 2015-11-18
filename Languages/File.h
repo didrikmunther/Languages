@@ -20,11 +20,14 @@ class File {
     
 public:
     File(std::string path);
+    ~File();
     
     void printFile();
     bool containsWord(std::string word);
     
+    std::ifstream file;
     std::vector<std::string> lines;
+    
     
 };
 
