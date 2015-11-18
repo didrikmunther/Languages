@@ -49,7 +49,7 @@ a = {"hej":1}           # En dictonary eller som man kallar det i C++, en map.
 ###funktioner
 
 def test():             #Detta är en funktion
-    print("okej")       #Här skriver den till konsolen
+print("okej")       #Här skriver den till konsolen
 #det är viktigt med en tab innan man fortsätter med innehållet av funktionen
 
 #om man ska ropa på funktionen så gör man:

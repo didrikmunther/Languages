@@ -10,7 +10,6 @@
 
 
 File::File(std::string path) {
-    std::ifstream file;
     file.open(path.c_str());
     
     if (!file) {
@@ -24,18 +23,20 @@ File::File(std::string path) {
             lines.push_back(line);
     
     if(containsWord("Java"))
-        std::cout << "Thobias sluta skriva om Java.\n";
-    
+        std::cout << "(Thobias sluta skriva om Java pls)\n";
+}
+
+File::~File() {
     file.close();
 }
 
 void File::printFile() {
-    for(auto &i: lines)
+    for(auto &i: lines) {
         std::cout << i << "\n";
+    }
 }
 
 bool File::containsWord(std::string word) {
-    
     for(auto &i: lines) {
         if(i.find(word) != std::string::npos)
             return true;
