@@ -25,12 +25,13 @@ File::File(std::string path) {
     
     if(containsWord("Java"))
         std::cout << "Thobias sluta skriva om Java.\n";
+    
+    file.close();
 }
 
 void File::printFile() {
-    for(auto &i: lines) {
+    for(auto &i: lines)
         std::cout << i << "\n";
-    }
 }
 
 bool File::containsWord(std::string word) {
