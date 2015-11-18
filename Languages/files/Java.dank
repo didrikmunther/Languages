@@ -1,1 +1,5 @@
 Java
+Java projektet startades i juni 1991, av James Gosling, Mike Sheridan och Patrick Naughton. Java var från början designat för kabel TV, men var för avanserat för kabel TV:s industrin under den tiden. Gosling designade Java med C/C++ stilat syntax som programerare skulle tycka var bekant. Dom viktigaste principern dom följde när dom skrev Java är:
+                        1.Det måste vara "simpelt, objektorienterat och bekant".
+                        2.Det måste vara arkitektur neutral - Det ska gå att köra Java direkt på alla operativsystem, med vilken hårdvara du än hadde.
+                        3.

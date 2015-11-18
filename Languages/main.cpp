@@ -10,7 +10,7 @@
 #include "File.h"
 
 int main(int argc, const char * argv[]) {
-    File file("Files/test.txt");
+    File file("Files/Java.dank");
     file.printFile();
 
     return 0;
