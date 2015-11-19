@@ -27,7 +27,8 @@ std::vector<std::pair<std::string, std::string>> parseInitFile(File* file) {
         std::getline(ss, item2, *delim);
         std::getline(ss, item2, *delim);
         
-        elements.push_back(std::make_pair(item, item2));
+        if(item != "" && item2 != "")
+            elements.push_back(std::make_pair(item, item2));
     }
     
     return elements;

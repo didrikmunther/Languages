@@ -42,7 +42,7 @@ Då om exempelvis hur biblotekets funktioner är definerade och vilka parametrar
 
 a = 5                   # Detta är en variabel med typen integer (heltal)
 a = 5.5                 # Detta är en variabel med typen float (decimaltal)
-a = True                # Sant eller falsk variabel
+a = True # False        # Booleansk variabel
 a = []                  # En lista
 a = {"hej":1}           # En dictonary eller som man kallar det i C++, en map.
 
@@ -54,6 +54,3 @@ print("okej")       #Här skriver den till konsolen
 
 #om man ska ropa på funktionen så gör man:
 test()
-
-
-
