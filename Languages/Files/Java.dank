@@ -1,14 +1,84 @@
-<<<<<<< HEAD
 Java
+
+Historia:
+
 Java projektet startades i juni 1991, av James Gosling, Mike Sheridan och Patrick Naughton. Java var från början designat för kabel TV, men var för avanserat för kabel TV:s industrin under den tiden. Gosling designade Java med C/C++ stilat syntax som programerare skulle tycka var bekant. Dom viktigaste principern dom följde när dom skrev Java är:
                         1.Det måste vara "simpelt, objektorienterat och bekant".
-                        2.Det måste vara arkitektur neutral - Det ska gå att köra Java direkt på alla operativsystem, med vilken hårdvara du än har.
-                            Detta 
+
+                        2.Det måste vara platformsoberoende - Det ska gå att köra Java direkt på alla operativsystem, med vilken hårdvara du än har.
+                            Detta uppnås genom att programet kompileras till bytekod istället för maskinkod. Bytekoden tolkas och körs sedan i en virituelmaskin, som är oberoende av vilken platform du är på.
+
                         3.Det måste vara säkert - Dom detta genom att stänga in oskända program i en "sandlåda" så att det inte kan göra någon skade mot datorn.
-=======
-Java
-Java projektet startades i juni 1991, av James Gosling, Mike Sheridan och Patrick Naughton. Java var från början designat för kabel TV, men var för avanserat för kabel TV:s industrin under den tiden. Gosling designade Java med C/C++ stilat syntax som programerare skulle tycka var bekant. Dom viktigaste principern dom följde när dom skrev Java är:
-                        1.Det måste vara "simpelt, objektorienterat och bekant".
-                        2.Det måste vara arkitektur neutral - Det ska gå att köra Java direkt på alla operativsystem, med vilken hårdvara du än hadde.
-                        3.
->>>>>>> Malaxiz/master
+
+Syntax:
+
+Java nästan bara objekt-orienterat. Det finns inga globala funktioner eller variabler och all kod tillhör en klass och alla värden är objekt. Det enda undantaget för detta är dom primitiva data typerna som t.ex. boolean värden, karaktärer och flyttal, dessa data typer är inte klassed av en klass pågrund av prestandaskäl. Men funktioner som operatör-överladning och osignerade heltal är utelämande för att simplifiera språket. Det finns tre olika sätt att kommentera:
+                                            1. Det första sättet är att kommentera på en rad och deffineras med två snedstreck (//).
+                                                T.ex. // Detta är en kommentar.
+                                            2. Det andra sättet är att kommentera på flera rader och det öppnas med (/*) och stängs med (*/).
+                                                T.ex. /* Detta är en kommentar............................... eeeeeeeeeeeeeeeeeeeelkhbgdkjbkjbkjsbgkjbsfgkjbsdgkjb */.
+                                            3. Det tredje sättet är Javadoc, det öppnas med (/**) och stängs med (*/). Detta kommenterings sätt låter användaren skapen en Javadoc executable, som låter använderen dokumenterta olika saker i programet, t.ex. att dukumentera varför programet krashade.
+                                                T.ex. /**
+                                                         *Detta är en Javadoc kommentar.
+                                                         *Detta är en Javadoc kommentar.
+                                                         */
+
+
+
+Exempel på Java kod:
+(Exempel tagan från: https://en.wikipedia.org/wiki/Java_(programming_language)#Syntax)
+
+Hello World programet i Java:
+
+class HelloWorldApp {
+    public static void main(String[] args) {
+        System.out.println("Hello World!"); // Prints the string to the console.
+    }
+}
+=============================================================================================================
+
+Allmänt exempel på Java kod (ingen anning om vad det gör):
+
+
+    // This is an example of a single line comment using two slashes
+
+    /* This is an example of a multiple line comment using the slash and asterisk.
+    This type of comment can be used to hold a lot of information or deactivate
+    code, but it is very important to remember to close the comment. */
+
+    package fibsandlies;
+    import java.util.HashMap;
+
+    /**
+    * This is an example of a Javadoc comment; Javadoc can compile documentation
+    * from this text. Javadoc comments must immediately precede the class, method, or field being documented.
+    */
+    public class FibCalculator extends Fibonacci implements Calculator {
+        private static Map<Integer, Integer> memoized = new HashMap<Integer, Integer>();
+
+        /*
+         * The main method written as follows is used by the JVM as a starting point for the program.
+        */
+        public static void main(String[] args) {
+            memoized.put(1, 1);
+            memoized.put(2, 1);
+            System.out.println(fibonacci(12)); //Get the 12th Fibonacci number and print to console
+        }
+
+        /**
+        * An example of a method written in Java, wrapped in a class.
+        * Given a non-negative number FIBINDEX, returns
+        * the Nth Fibonacci number, where N equals FIBINDEX.
+        * @param fibIndex The index of the Fibonacci number
+        * @return The Fibonacci number
+        */
+        public static int fibonacci(int fibIndex) {
+            if (memoized.containsKey(fibIndex)) {
+                return memoized.get(fibIndex);
+            } else {
+                int answer = fibonacci(fibIndex - 1) + fibonacci(fibIndex - 2);
+                memoized.put(fibIndex, answer);
+                return answer;
+            }
+        }
+    }

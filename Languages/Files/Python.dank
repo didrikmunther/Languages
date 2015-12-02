@@ -42,15 +42,28 @@ Då om exempelvis hur biblotekets funktioner är definerade och vilka parametrar
 
 a = 5                   # Detta är en variabel med typen integer (heltal)
 a = 5.5                 # Detta är en variabel med typen float (decimaltal)
-a = True # False        # Booleansk variabel
+a = True                # Sant eller falsk variabel
 a = []                  # En lista
-a = {"hej":1}           # En dictonary eller som man kallar det i C++, en map.
+a = {"hej":1}           # En dictonary eller map som man kallar det i C++.
 
 ###funktioner
 
 def test():             #Detta är en funktion
-print("okej")       #Här skriver den till konsolen
+    print("okej")       #Här skriver den till konsolen
 #det är viktigt med en tab innan man fortsätter med innehållet av funktionen
 
 #om man ska ropa på funktionen så gör man:
 test()
+
+
+#Hello World i python
+
+print("Hello World!")
+
+#Det finns ett annat sett som en person har kommit på:
+https://benkurtovic.com/2014/06/01/obfuscating-hello-world.html
+#vilket är väldigt onödigt
+
+
+
+
