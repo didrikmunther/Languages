@@ -7,6 +7,10 @@ Java projektet startades i juni 1991, av James Gosling, Mike Sheridan och Patric
 
                         2.Det måste vara platformsoberoende - Det ska gå att köra Java direkt på alla operativsystem, med vilken hårdvara du än har.
                             Detta uppnås genom att programet kompileras till bytekod istället för maskinkod. Bytekoden tolkas och körs sedan i en virituelmaskin, som är oberoende av vilken platform du är på.
+<<<<<<< HEAD
+=======
+
+>>>>>>> Malaxiz/master
                         3.Det måste vara säkert - Dom detta genom att stänga in oskända program i en "sandlåda" så att det inte kan göra någon skada mot datorn.
 
 Syntax:
@@ -20,6 +24,10 @@ Java nästan bara objekt-orienterat. Det finns inga globala funktioner eller var
                                     *Detta är en Javadoc kommentar.
                                     *Detta är en Javadoc kommentar.
                                     */
+<<<<<<< HEAD
+=======
+
+>>>>>>> Malaxiz/master
 
 
 Exempel på Java kod:
