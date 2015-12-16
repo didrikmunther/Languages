@@ -57,7 +57,10 @@ def test():             #Detta är en funktion
 #om man ska ropa på funktionen så gör man:
 test()
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> Malaxiz/master
 #Hello World i python
 
 print("Hello World!")
