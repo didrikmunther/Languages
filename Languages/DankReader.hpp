@@ -31,6 +31,8 @@ public:
     
 private:
     Status parseCommand(std::vector<std::string> commands);
+    void printString(std::string toPrint);
+    void printString(std::vector<std::string> toPrint);
     
     bool isNumber(std::string val);
     
@@ -41,6 +43,16 @@ private:
     std::vector<std::string> splitString(std::string val, const char* delim);
     
     std::map<std::string, File*> fileMap;
+    
+//    template<typename Head>
+//    void print(Head head) {
+//        
+//    }
+//    
+//    template<typename Head, typename ... Tail>
+//    void print(Head&& head, Tail&& ... tail) {
+//        print(std::forward<Tail>(tail) ...);
+//    }
     
     int delay;
     

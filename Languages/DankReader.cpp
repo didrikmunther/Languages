@@ -11,9 +11,11 @@
 
 #include "DankReader.hpp"
 
+using namespace std::chrono;
+
 
 DankReader::DankReader()
-    : delay(20)
+    : delay(10)
 {
 }
 
@@ -29,7 +31,7 @@ void DankReader::execute(std::string initFile) {
     parseCommand({"help"});
     
     while(true) {               // Check for input
-        std::cout << "_________________________\n> ";
+        printString("_________________________\n> ");
         std::string input = "";
         std::getline(std::cin, input);
         std::vector<std::string> commands = splitString(input, " ");
@@ -63,20 +65,21 @@ Status DankReader::parseCommand(std::vector<std::string> commands) {
     
     if(commands[0] == "open") {
         if(commands.size() <= 1) {
-            std::cout << "Invalid parameters for \"open\".\n";
+            printString("Invalid parameters for \"open\".\n");
             return NORMAL;
         }
         
         if(fileMap.find(commands[1]) == fileMap.end()) {
-            std::cout << "No such file with name \"" << commands[1] << "\"\n";
+            printString("No such file with name \"" + commands[1] + "\"\n");
             return NORMAL;
         }
         
         commands.erase(commands.begin());
         for(auto& i: commands) {
-            std::cout << "\n------------------\n\n";
+            printString("\n------------------\n\n");
             File* fileToPrint = fileMap[i];
-            fileToPrint->printFile(delay);
+            printString(fileToPrint->lines);
+//            fileToPrint->printFile(delay);
         }
         
         return NORMAL;
@@ -97,20 +100,20 @@ Status DankReader::parseCommand(std::vector<std::string> commands) {
     
     if(commands[0] == "delay") {
         if(commands.size() <= 1) {
-            std::cout << "Delay is " << delay << "\n";
+            printString("Delay is " + std::to_string(delay) + "\n");
             return NORMAL;
         }
         if(!isNumber(commands[1])) {
-            std::cout << "Invalid parameter to command \"delay\"\n";
+            printString("Invalid parameter to command \"delay\"\n");
             return NORMAL;
         }
         
         delay = std::stoi(commands[1]);
-        std::cout << "Set delay to " << delay << "\n";
+        printString({"Set delay to ", std::to_string(delay), "\n"});
         return NORMAL;
     }
     
-    std::cout << "No such command \"" << commands[0] << "\"\nType \"?\" or \"help\" for help.\n";
+    printString("No such command \"" + commands[0] + "\"\nType \"?\" or \"help\" for help.\n");
     return NORMAL;
 }
 
@@ -146,26 +149,56 @@ std::vector<std::pair<std::string, std::string>> DankReader::parseInitFile(File*
     return elements;
 }
 
-void DankReader::printIntro(std::map<std::string, File*>* fileMap) {
-    std::cout << "[ ========= ]\n";
+void DankReader::printString(std::string toPrint) {
+    milliseconds del(delay);
     
-    for(auto& i: *fileMap) {
-        std::cout << i.first << "\n";
+    steady_clock::time_point now = steady_clock::now();
+    steady_clock::time_point last = steady_clock::now();
+    
+    for(auto &letter: toPrint) {
+        last = now;
+        std::cout << letter;
+        std::cout.flush();
+        while(true) {
+            now = steady_clock::now();
+            if(duration_cast<milliseconds>(now - last) >= del)
+                break;
+        }
+    }
+}
+
+void DankReader::printString(std::vector<std::string> toPrint) {
+    std::string toPrintString = "";
+    for(auto& line: toPrint) {
+        toPrintString += line + '\n';
     }
     
-    std::cout << "[ ========= ]\n";
+    printString(toPrintString);
+}
+
+void DankReader::printIntro(std::map<std::string, File*>* fileMap) {
+    printString("[ ========= ]\n");
+    
+    for(auto& i: *fileMap) {
+        printString(i.first + "\n");
+    }
+    
+    printString("[ ========= ]\n");
 }
 
 void DankReader::printHelp() {
-    std::cout << "[SFRS] Simple File Reading System.\n";
-    std::cout << "==================================\n";
-    std::cout << "Commands: \n";
-    std::cout << "\"help\"     : Displays this window.\n";
-    std::cout << "\"exit\"     : Exits the program\n";
-    std::cout << "\"list\"     : Lists all the different programming languages available to read about.\n";
-    std::cout << "\"open\"     : Open a document about a programming language, second argument is the name of the language.\n";
-    std::cout << "\"delay\"    : Set the delay at which the file is printed.\n";
-    std::cout << "\"clear\"    : Clear the screen if possible.\n";
+    std::vector<std::string> toPrint = {
+    "[SFRS] Simple File Reading System.",
+    "==================================",
+    "Commands: ",
+    "\"help\"     : Prints the different commands and their use.",
+    "\"exit\"     : Exits the program",
+    "\"list\"     : Lists all the different programming languages available to read about.",
+    "\"open\"     : Open a document about a programming language, second argument is the name of the language.",
+    "\"delay\"    : Set the delay at which the file is printed.",
+    "\"clear\"    : Clear the screen if possible."};
+    
+    printString(toPrint);
 }
 
 bool DankReader::isNumber(std::string val) {

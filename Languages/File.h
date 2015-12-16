@@ -22,7 +22,6 @@ public:
     File(std::string path);
     ~File();
     
-    void printFile(int delay);
     bool containsWord(std::string word);
     
     std::ifstream file;

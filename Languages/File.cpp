@@ -32,27 +32,6 @@ File::~File() {
     file.close();
 }
 
-void File::printFile(int delay) {
-    milliseconds del(delay);
-    
-    steady_clock::time_point now = steady_clock::now();
-    steady_clock::time_point last = steady_clock::now();
-    
-    for(auto &line: lines) {
-        for(auto& letter: line) {
-            last = now;
-            std::cout << letter;
-            std::cout.flush();
-            while(true) {
-                now = steady_clock::now();
-                if(duration_cast<milliseconds>(now - last) >= del)
-                    break;
-            }
-        }
-        std::cout << "\n";
-    }
-}
-
 bool File::containsWord(std::string word) {
     for(auto &i: lines) {
         if(i.find(word) != std::string::npos)
