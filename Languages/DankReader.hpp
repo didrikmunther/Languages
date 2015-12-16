@@ -13,6 +13,10 @@
 #include <map>
 #include <vector>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+#include <string>
+>>>>>>> Malaxiz/master
 =======
 #include <string>
 >>>>>>> Malaxiz/master
@@ -21,12 +25,18 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> Malaxiz/master
 enum Status {
     NORMAL  = 0,
     QUIT    = 1
 };
 
+<<<<<<< HEAD
+>>>>>>> Malaxiz/master
+=======
 >>>>>>> Malaxiz/master
 class DankReader {
     
@@ -37,6 +47,11 @@ public:
     
 private:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    Status parseCommand(std::vector<std::string> commands);
+    
+>>>>>>> Malaxiz/master
 =======
     Status parseCommand(std::vector<std::string> commands);
     
@@ -50,6 +65,11 @@ private:
     std::vector<std::string> splitString(std::string val, const char* delim);
     
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    std::map<std::string, File*> fileMap;
+    
+>>>>>>> Malaxiz/master
 =======
     std::map<std::string, File*> fileMap;
     

@@ -22,8 +22,11 @@ void DankReader::execute(std::string initFile) {
     auto elements = parseInitFile(&init);
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     std::map<std::string, File*> fileMap;
     
+=======
+>>>>>>> Malaxiz/master
 =======
 >>>>>>> Malaxiz/master
     for(auto& i: elements) {    // Load files and put them in a map
@@ -32,6 +35,11 @@ void DankReader::execute(std::string initFile) {
     }
     
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    parseCommand({"help"});
+    
+>>>>>>> Malaxiz/master
 =======
     parseCommand({"help"});
     
@@ -42,6 +50,7 @@ void DankReader::execute(std::string initFile) {
         std::getline(std::cin, input);
         std::vector<std::string> commands = splitString(input, " ");
         
+<<<<<<< HEAD
 <<<<<<< HEAD
         if(commands.empty())
             continue;
@@ -118,6 +127,8 @@ void DankReader::execute(std::string initFile) {
     }
     fileMap.clear();
 =======
+=======
+>>>>>>> Malaxiz/master
         if(parseCommand(commands) == QUIT)
             break;
     }
@@ -196,6 +207,9 @@ Status DankReader::parseCommand(std::vector<std::string> commands) {
     
     std::cout << "No such command \"" << commands[0] << "\"\nType \"?\" or \"help\" for help.\n";
     return NORMAL;
+<<<<<<< HEAD
+>>>>>>> Malaxiz/master
+=======
 >>>>>>> Malaxiz/master
 }
 
@@ -251,6 +265,10 @@ void DankReader::printHelp() {
     std::cout << "\"open\"     : Open a document about a programming language, second argument is the name of the language.\n";
     std::cout << "\"delay\"    : Set the delay at which the file is printed.\n";
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    std::cout << "\"clear\"    : Clear the screen if possible.\n";
+>>>>>>> Malaxiz/master
 =======
     std::cout << "\"clear\"    : Clear the screen if possible.\n";
 >>>>>>> Malaxiz/master

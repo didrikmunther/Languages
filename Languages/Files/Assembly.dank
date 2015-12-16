@@ -1,7 +1,10 @@
 Assembly
 <<<<<<< HEAD
+<<<<<<< HEAD
 Assembly är ett viktigt språk för att...
 =======
+=======
+>>>>>>> Malaxiz/master
 Assembly är ett viktigt språk för att det är grunder till många språk som till exempel C.
 
 Hello world i assembly:
@@ -24,4 +27,7 @@ section     .data
 
 msg     db  'Hello, world!', 0xa
 len     equ $ - msg
+<<<<<<< HEAD
+>>>>>>> Malaxiz/master
+=======
 >>>>>>> Malaxiz/master

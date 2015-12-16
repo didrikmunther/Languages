@@ -34,15 +34,21 @@ File::~File() {
 
 void File::printFile(int delay) {
 <<<<<<< HEAD
+<<<<<<< HEAD
     std::chrono::milliseconds del(delay);
     
     std::chrono::steady_clock::time_point now = std::chrono::steady_clock::now();
     std::chrono::steady_clock::time_point last = std::chrono::steady_clock::now();
 =======
+=======
+>>>>>>> Malaxiz/master
     milliseconds del(delay);
     
     steady_clock::time_point now = steady_clock::now();
     steady_clock::time_point last = steady_clock::now();
+<<<<<<< HEAD
+>>>>>>> Malaxiz/master
+=======
 >>>>>>> Malaxiz/master
     
     for(auto &line: lines) {
@@ -52,10 +58,16 @@ void File::printFile(int delay) {
             std::cout.flush();
             while(true) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 now = std::chrono::steady_clock::now();
                 if(duration_cast<milliseconds>(now - last) > del) {
                     break;
                 }
+=======
+                now = steady_clock::now();
+                if(duration_cast<milliseconds>(now - last) >= del)
+                    break;
+>>>>>>> Malaxiz/master
 =======
                 now = steady_clock::now();
                 if(duration_cast<milliseconds>(now - last) >= del)

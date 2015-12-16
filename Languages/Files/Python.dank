@@ -58,7 +58,10 @@ def test():             #Detta är en funktion
 test()
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> Malaxiz/master
 =======
 >>>>>>> Malaxiz/master
 #Hello World i python

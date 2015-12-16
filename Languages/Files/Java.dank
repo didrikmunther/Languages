@@ -9,33 +9,45 @@ Java projektet startades i juni 1991, av James Gosling, Mike Sheridan och Patric
                             Detta uppnås genom att programet kompileras till bytekod istället för maskinkod. Bytekoden tolkas och körs sedan i en virituelmaskin, som är oberoende av vilken platform du är på.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                         3.Det måste vara säkert - Dom detta genom att stänga in oskända program i en "sandlåda" så att det inte kan göra någon skada mot datorn.
 
 Syntax:
 
 Java nästan bara objekt-orienterat. Det finns inga globala funktioner eller variabler och all kod tillhör en klass och alla värden är objekt. Det enda undantaget för detta är dom primitiva data typerna som t.ex. boolean värden, karaktärer och flyttal, dessa data typer är inte klassed av en klass pågrund av prestandaskäl. Men funktioner som operatör-överladning och osignerade heltal är utelämande för att simplifiera språket. Det finns två olika sätt att kommentera:
 =======
+=======
+>>>>>>> Malaxiz/master
                         3.Det måste vara säkert - Dom detta genom att stänga in oskända program i en "sandlåda" så att det inte kan göra någon skade mot datorn.
 
 Syntax:
 
 Java nästan bara objekt-orienterat. Det finns inga globala funktioner eller variabler och all kod tillhör en klass och alla värden är objekt. Det enda undantaget för detta är dom primitiva data typerna som t.ex. boolean värden, karaktärer och flyttal, dessa data typer är inte klassed av en klass pågrund av prestandaskäl. Men funktioner som operatör-överladning och osignerade heltal är utelämande för att simplifiera språket. Det finns tre olika sätt att kommentera:
+<<<<<<< HEAD
+>>>>>>> Malaxiz/master
+=======
 >>>>>>> Malaxiz/master
                                             1. Det första sättet är att kommentera på en rad och deffineras med två snedstreck (//).
                                                 T.ex. // Detta är en kommentar.
                                             2. Det andra sättet är att kommentera på flera rader och det öppnas med (/*) och stängs med (*/).
                                                 T.ex. /* Detta är en kommentar............................... eeeeeeeeeeeeeeeeeeeelkhbgdkjbkjbkjsbgkjbsfgkjbsdgkjb */.
 <<<<<<< HEAD
+<<<<<<< HEAD
      En still att kommentera på i Java är Javadoc. Det är en slags kommentar som gör att ett program kan läsa det och skriva i det. Så det kan användas till a göra config filer i och ett program kan skriva in en chrash raport i det så man vet varför det crashade. en Javadoc kommentar öppnas med (/**) och stängs med (*/).   T.ex. /**
                                     *Detta är en Javadoc kommentar.
                                     *Detta är en Javadoc kommentar.
                                     */
 =======
+=======
+>>>>>>> Malaxiz/master
                                             3. Det tredje sättet är Javadoc, det öppnas med (/**) och stängs med (*/). Detta kommenterings sätt låter användaren skapen en Javadoc executable, som låter använderen dokumenterta olika saker i programet, t.ex. att dukumentera varför programet krashade.
                                                 T.ex. /**
                                                          *Detta är en Javadoc kommentar.
                                                          *Detta är en Javadoc kommentar.
                                                          */
+<<<<<<< HEAD
+>>>>>>> Malaxiz/master
+=======
 >>>>>>> Malaxiz/master
 
 
