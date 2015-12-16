@@ -195,7 +195,7 @@ void DankReader::printHelp() {
     "\"exit\"     : Exits the program",
     "\"list\"     : Lists all the different programming languages available to read about.",
     "\"open\"     : Open a document about a programming language, second argument is the name of the language.",
-    "\"delay\"    : Set the delay at which the file is printed.",
+    "\"delay\"    : Set the delay at which the program prints.",
     "\"clear\"    : Clear the screen if possible."};
     
     printString(toPrint);
