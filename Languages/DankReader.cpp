@@ -21,12 +21,12 @@ void DankReader::execute(std::string initFile) {
     File init(initFile);
     auto elements = parseInitFile(&init);
     
-    std::map<std::string, File*> fileMap;
-    
     for(auto& i: elements) {    // Load files and put them in a map
         File* file = new File(i.second);
         fileMap[i.first] = file;
     }
+    
+    parseCommand({"help"});
     
     while(true) {               // Check for input
         std::cout << "_________________________\n> ";
@@ -34,80 +34,84 @@ void DankReader::execute(std::string initFile) {
         std::getline(std::cin, input);
         std::vector<std::string> commands = splitString(input, " ");
         
-        if(commands.empty())
-            continue;
-        
-        if(commands[0] == "exit" || commands[0] == "quit")
+        if(parseCommand(commands) == QUIT)
             break;
-        
-        if(commands[0] == "help" || commands[0] == "?") {
-            printHelp();
-            continue;
-        }
-        
-        if(commands[0] == "list") {
-            printIntro(&fileMap);
-            continue;
-        }
-        
-        if(commands[0] == "open") {
-            if(commands.size() <= 1) {
-                std::cout << "Invalid parameters for \"open\".\n";
-                continue;
-            }
-            
-            if(fileMap.find(commands[1]) == fileMap.end()) {
-                std::cout << "No such file with name \"" << commands[1] << "\"\n";
-                continue;
-            }
-            
-            commands.erase(commands.begin());
-            for(auto& i: commands) {
-                std::cout << "\n------------------\n\n";
-                File* fileToPrint = fileMap[i];
-                fileToPrint->printFile(delay);
-            }
-            
-            continue;
-        }
-        
-        if(commands[0] == "clear") {
-            #ifdef _WIN32
-                system("cls");
-            #elif __APPLE__
-                system("clear");
-            #elif __linux__
-                system("clear");
-            #else
-                std::cout << "Unknown enviroment.\n";
-            #endif
-            continue;
-        }
-        
-        if(commands[0] == "delay") {
-            if(commands.size() <= 1) {
-                std::cout << "Delay is " << delay << "\n";
-                continue;
-            }
-            if(!isNumber(commands[1])) {
-                std::cout << "Invalid parameter to command \"delay\"\n";
-                continue;
-            }
-            
-            delay = std::stoi(commands[1]);
-            std::cout << "Set delay to " << delay << "\n";
-            continue;
-        }
-        
-        std::cout << "No such command \"" << commands[0] << "\"\nType \"?\" or \"help\" for help.\n";
     }
-    
-    
     
     for(auto& i: fileMap) {     // Cleanup files
         delete i.second;
     }
     fileMap.clear();
+}
+
+Status DankReader::parseCommand(std::vector<std::string> commands) {
+    if(commands.empty())
+        return NORMAL;
+    
+    if(commands[0] == "exit" || commands[0] == "quit")
+        return QUIT;
+    
+    if(commands[0] == "help" || commands[0] == "?") {
+        printHelp();
+        return NORMAL;
+    }
+    
+    if(commands[0] == "list") {
+        printIntro(&fileMap);
+        return NORMAL;
+    }
+    
+    if(commands[0] == "open") {
+        if(commands.size() <= 1) {
+            std::cout << "Invalid parameters for \"open\".\n";
+            return NORMAL;
+        }
+        
+        if(fileMap.find(commands[1]) == fileMap.end()) {
+            std::cout << "No such file with name \"" << commands[1] << "\"\n";
+            return NORMAL;
+        }
+        
+        commands.erase(commands.begin());
+        for(auto& i: commands) {
+            std::cout << "\n------------------\n\n";
+            File* fileToPrint = fileMap[i];
+            fileToPrint->printFile(delay);
+        }
+        
+        return NORMAL;
+    }
+    
+    if(commands[0] == "clear") {
+#ifdef _WIN32
+        system("cls");
+#elif __APPLE__
+        system("clear");
+#elif __linux__
+        system("clear");
+#else
+        std::cout << "Unknown enviroment.\n";
+#endif
+        return NORMAL;
+    }
+    
+    if(commands[0] == "delay") {
+        if(commands.size() <= 1) {
+            std::cout << "Delay is " << delay << "\n";
+            return NORMAL;
+        }
+        if(!isNumber(commands[1])) {
+            std::cout << "Invalid parameter to command \"delay\"\n";
+            return NORMAL;
+        }
+        
+        delay = std::stoi(commands[1]);
+        std::cout << "Set delay to " << delay << "\n";
+        return NORMAL;
+    }
+    
+    std::cout << "No such command \"" << commands[0] << "\"\nType \"?\" or \"help\" for help.\n";
+    return NORMAL;
 }
 
 std::vector<std::string> DankReader::splitString(std::string val, const char* delim) {
@@ -161,6 +165,7 @@ void DankReader::printHelp() {
     std::cout << "\"list\"     : Lists all the different programming languages available to read about.\n";
     std::cout << "\"open\"     : Open a document about a programming language, second argument is the name of the language.\n";
     std::cout << "\"delay\"    : Set the delay at which the file is printed.\n";
+    std::cout << "\"clear\"    : Clear the screen if possible.\n";
 }
 
 bool DankReader::isNumber(std::string val) {
