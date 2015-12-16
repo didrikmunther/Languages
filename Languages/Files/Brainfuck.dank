@@ -1,4 +1,13 @@
-The Brainfuck programming language is a bla bla bla bla
+#!bin/brainfuck
 
-Hello world i Brainfuck
+Brainfuck är ett så kallat 'Esolang' (esoteriskt programmeringsspråk). I andra ord är det ett programmeringsspråk vars syfte endast är att vara ett skämt.
+Den första kompilatorn lades upp 1993 av den schweiziska studenten Urban Müller. Den första utgåvan av språket var skrivet i maskinkod och tog totalt bara upp ett utrymme på 296 bytes. Müller har sagt att han utmanar andra programmerare att skriva någonting användbart i Brainfuck
+
+Språket består av 8 simpla kommandon, och är inte gjort för att användas praktiskt, utan endast för att förvirra andra programmerare.
+
+< > . , + - [ ]
+
+Alla dessa kommandon manipulerar på något sätt datan i programmet. Språket stödjer input och output, och kan till och med utföra loops.
+
+"Hello world" i Brainfuck
 ++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++.>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.------.--------.>+.>.
