@@ -79,7 +79,6 @@ Status DankReader::parseCommand(std::vector<std::string> commands) {
             printString("\n------------------\n\n");
             File* fileToPrint = fileMap[i];
             printString(fileToPrint->lines);
-//            fileToPrint->printFile(delay);
         }
         
         return NORMAL;
@@ -110,6 +109,11 @@ Status DankReader::parseCommand(std::vector<std::string> commands) {
         
         delay = std::stoi(commands[1]);
         printString({"Set delay to ", std::to_string(delay), "\n"});
+        return NORMAL;
+    }
+    
+    if(commands[0] == "about") {
+        printString("Made by: Didrik, Emma, Lucas and Thobias with C++.\n");
         return NORMAL;
     }
     
@@ -195,8 +199,9 @@ void DankReader::printHelp() {
     "\"exit\"     : Exits the program",
     "\"list\"     : Lists all the different programming languages available to read about.",
     "\"open\"     : Open a document about a programming language, second argument is the name of the language.",
-    "\"delay\"    : Set the delay at which the program prints.",
-    "\"clear\"    : Clear the screen if possible."};
+    "\"delay\"    : Set or view the delay at which the program prints.",
+    "\"clear\"    : Clear the screen if possible.",
+    "\"about\"    : About this program."};
     
     printString(toPrint);
 }
